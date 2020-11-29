@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <CodeAnalysisRuleSet>..\..\Rules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <AdditionalFiles Include="..\..\stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="appsettings.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="2.8.0" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.EnvironmentVariables" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.Json" Version="3.1.9" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="3.1.9" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
+    <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\SeoTools.Common\SeoTools.Common.csproj" />
+    <ProjectReference Include="..\..\Data\SeoTools.Data.Common\SeoTools.Data.Common.csproj" />
+    <ProjectReference Include="..\..\Data\SeoTools.Data.Models\SeoTools.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\SeoTools.Data\SeoTools.Data.csproj" />
+    <ProjectReference Include="..\..\Services\SeoTools.Services.Data\SeoTools.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Services\SeoTools.Services.Mapping\SeoTools.Services.Mapping.csproj" />
+    <ProjectReference Include="..\..\Services\SeoTools.Services.Messaging\SeoTools.Services.Messaging.csproj" />
+    <ProjectReference Include="..\..\Services\SeoTools.Services\SeoTools.Services.csproj" />
+  </ItemGroup>
+
+</Project>
